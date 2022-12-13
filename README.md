@@ -1,4 +1,20 @@
 # Grade Letter Request - Soren Laney
+***
+
+### What you liked and didn't like about the course.
+
+  The course coverd a wide area of materials and taught pratical deployment of data sicenece tools. This was really impressive
+  and something that I particualry liked about the course. I didn't particuarly always like how the class was so loosely taught and 
+  meant to be so self directed. However. I will admit that under a lighter course load it would have been easier to spend more time figuring out what needs 
+  to be done to be successful in the class. 
+
+### Recommendations for improvement.
+
+  I think the biggest improvement to the course would be a coding assigment that covers the majority of the functions that would be neeeded in pyspark
+  for this course. The other assignment that I would add would be one that preps students understanding of the data for the course of that semester
+  that they will need to complete the rest of the assigments for the semester. Of sourse, these are the areas that I struggled in the most, so it might 
+  not be the most advantageous to other students to spend time on these areas. 
+
 
 ***
 

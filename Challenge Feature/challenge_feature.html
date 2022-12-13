@@ -1,0 +1,580 @@
+<!DOCTYPE html><html><head>
+      <title>challenge_feature</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/soren.laney/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.5/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="feature-challenge">Feature Challenge</h2>
+
+<hr>
+<h3 class="mume-header" id="feature-table">Feature Table</h3>
+
+<style>
+    .heatMap {
+        width: 70%;
+        text-align: center;
+    }
+    .heatMap th {
+        background: grey;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+</style>
+<div class="heatMap">
+<table>
+<thead>
+<tr>
+<th>tract</th>
+<th>total_starbucks_by_tract</th>
+<th>Average_Years_of_Edcuation_by_tract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04019002506</td>
+<td>2</td>
+<td>14.473276655508052</td>
+</tr>
+<tr>
+<td>06037701801</td>
+<td>2</td>
+<td>15.57204377455066</td>
+</tr>
+<tr>
+<td>02020000400</td>
+<td>3</td>
+<td>16.060375443937087</td>
+</tr>
+<tr>
+<td>17097863701</td>
+<td>1</td>
+<td>17.340452865639847</td>
+</tr>
+<tr>
+<td>42011011101</td>
+<td>1</td>
+<td>16.121747734765187</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="mume-header" id="feature-dictionary">Feature Dictionary</h3>
+
+<style>
+    .heatMap {
+        width: 70%;
+        text-align: center;
+    }
+    .heatMap th {
+        background: grey;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+</style>
+<div class="heatMap">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total_starbucks_by_tract</td>
+<td>The Total Number of Starbucks per Tract</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>Average_Years_of_Edcuation_by_tract</td>
+<td>Average Number of Years of Education per Tract</td>
+<td>Double</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="mume-header" id="feature-1">Feature 1</h3>
+
+<hr>
+<h5 class="mume-header" id="describing-the-feature">Describing the feature</h5>
+
+<p>I realized it would be useful to know what census tracts have very popular brands that indicate there is a lot of traffic or people there. I decided to located how many starbucks there are per census tract becuase it is not only the second most popular fast food establishment behind subway, it is also a location that a typical customer frequents daily. I started by getting data from the hive_metastore.safegraph2.places, specifically the naics codes and the points of intereset. I then gathered data from hive_metastore.safegraph2.censusmapping to get tract code, census block group and placekey information. I then merged the files and began filtering. After I filtered done to only the starbucks locations I joined the tables on placekey. From there I grouped the data by tract code and counting by placekey, or every individual starbucks. This gave me the total number of starbucks per census tract. I will say however, that some of the starbucks did not register with a census tract leaving us with aproximately two thrid&apos;s of the total starbucks located in the US.</p>
+<h5 class="mume-header" id="pseudocode">Pseudocode</h5>
+
+<pre data-role="codeBlock" data-info="{r, eval = FALSE}" class="language-"><code># Select columns from df_places dataset
+df_places_select = df_places.select(&quot;placekey&quot;, &quot;poi_cbg&quot;, &quot;naics_code&quot;, &quot;location_name&quot;)
+ 
+# Selects starbucks loctions from dataset
+df_starbucks = df_places_select.filter(df_places_select.location_name == &quot;Starbucks&quot;)
+ 
+#join on placekey
+df_starbucks_tract = df_starbucks.join(df_censusmapping,df_starbucks.placekey ==  df_censusmapping.placekey,&quot;left&quot;)
+ 
+#Select Columns from dataset after join
+df_starbucks_tract_1 = df_starbucks_tract.select(&quot;tract&quot;, &quot;location_name&quot;) 
+ 
+df_starbucks_tract_total = df_starbucks_tract_1.groupBy(&quot;tract&quot;).count() \
+.withColumnRenamed(&quot;count&quot;, &quot;total_starbucks_by_tract&quot;)
+
+</code></pre><h5 class="mume-header" id="data-wrangling">Data Wrangling</h5>
+
+<pre data-role="codeBlock" data-info="{r, eval = FALSE}" class="language-"><code>#join on placekey
+df_starbucks_tract = df_starbucks.join(df_censusmapping,df_starbucks.placekey ==  df_censusmapping.placekey,&quot;left&quot;)
+ 
+#Select Columns from dataset after join
+df_starbucks_tract_1 = df_starbucks_tract.select(&quot;tract&quot;, &quot;location_name&quot;) 
+ 
+df_starbucks_tract_total = df_starbucks_tract_1.groupBy(&quot;tract&quot;).count() \
+.withColumnRenamed(&quot;count&quot;, &quot;total_starbucks_by_tract&quot;)
+
+</code></pre><h5 class="mume-header" id="visualization">Visualization</h5>
+
+<p>Will update when DataBricks is working</p>
+<h5 class="mume-header" id="table">Table</h5>
+
+<h2 class="mume-header" id="table-styling-in-markdown">Table Styling in Markdown</h2>
+
+<style>
+    .heatMap {
+        width: 70%;
+        text-align: center;
+    }
+    .heatMap th {
+        background: grey;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+</style>
+<div class="heatMap">
+<table>
+<thead>
+<tr>
+<th>tract</th>
+<th>total_starbucks_by_tract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04019002506</td>
+<td>2</td>
+</tr>
+<tr>
+<td>06037701801</td>
+<td>2</td>
+</tr>
+<tr>
+<td>02020000400</td>
+<td>3</td>
+</tr>
+<tr>
+<td>17097863701</td>
+<td>1</td>
+</tr>
+<tr>
+<td>42011011101</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="mume-header" id="feature-2">Feature 2</h3>
+
+<hr>
+<h5 class="mume-header" id="describing-the-feature-1">Describing the feature</h5>
+
+<p>After studying the data, I detirmined that the average education level, or years of schooling, in a census tract could be an excelent indicator for whether or not they have an ev charging and if they will need on in the future. This assumption is made on the principle that typically urban areas have a higher education rate per capita and drive more eletric vehicles compared to that of rural areas where these wehicles are not as practicle and there are less jobs requiring higher education. I gathered the data that I needed for this directly from the census databse and specifically table B15. Within b15 I selected the rows of B15003e2 through B15003e25 which could the population of the that census tract over the age of 25 that has x years of education. I then wrangled this data by creating a seperate dataframe for every level of education provided from zero years of education to a doctorates level of education. After creating these datasets I added a new column assigning an integer variable to represent the number of years of education. Then I merged the dataframes together to create one dataframe that I could then derive the feature from. I did this by creating a new column that was the population of the census block group multiplied by the years of education to get the total years of education by census block group. I then divided this column by the total population by census block to get the average years of education per census block. After getting the average education of each census block group I then simply grouped by tract to arrive at the target variable.`</p>
+<h5 class="mume-header" id="pseudocode-1">Pseudocode</h5>
+
+<pre data-role="codeBlock" data-info="{r, eval = FALSE}" class="language-"><code># Select all of the education columns from the dataset
+df_education_1 = df_education.select(&quot;census_block_group&quot;, &quot;B15003e2&quot;, &quot;B15003e3&quot;, &quot;B15003e4&quot;, &quot;B15003e5&quot;, &quot;B15003e6&quot;, &quot;B15003e7&quot;, &quot;B15003e8&quot;, &quot;B15003e9&quot;, &quot;B15003e10&quot;, &quot;B15003e11&quot;, &quot;B15003e12&quot;, &quot;B15003e13&quot;, &quot;B15003e14&quot;, &quot;B15003e15&quot;, &quot;B15003e16&quot;, &quot;B15003e17&quot;, &quot;B15003e18&quot;, &quot;B15003e19&quot;, &quot;B15003e20&quot;, &quot;B15003e21&quot;, &quot;B15003e22&quot;, &quot;B15003e23&quot;, &quot;B15003e24&quot;, &quot;B15003e25&quot;)
+df_education_1.display()
+ 
+# Dataset for yeo_0
+df_education_yoe_0 = df_education_1.select(&quot;census_block_group&quot;, &quot;B15003e2&quot;) \
+.withColumn(&quot;yoe&quot;, lit(0)) \
+.withColumnRenamed(&apos;B15003e2&apos;, &apos;population&apos;) \
+#.show()
+ 
+#...
+ 
+df_weighted_education_yoe_0 = df_education_yoe_0.withColumn(&quot;yoe_weighted&quot;, df_education_yoe_0.population*df_education_yoe_0.yoe) 
+ 
+#...
+ 
+df_weighted_yoe = [df_weighted_education_yoe_0,
+                   df_weighted_education_yoe_1,
+                   
+#...
+ 
+total_population = df_merged_2.groupBy(&quot;census_block_group&quot;) \
+.sum(&quot;population&quot;) \
+.withColumnRenamed(&quot;sum(population)&quot;, &quot;sum_population&quot;)#.display(truncate=False)
+ 
+# Select the columns
+total_population_reorderd = total_population.select(&quot;sum_population&quot;, &quot;census_block_group&quot;)
+ 
+total_yoe = df_merged_2.groupBy(&quot;census_block_group&quot;) \
+.sum(&quot;yoe_weighted&quot;) \
+.withColumnRenamed(&quot;sum(yoe_weighted)&quot;, &quot;sum_yoe_weighted&quot;)#.display(truncate=False)
+ 
+df_joined = total_population_reorderd.join(total_yoe, [&quot;census_block_group&quot;])
+ 
+from pyspark.sql.functions import lit
+ 
+df_avg_yoe_cbg = df_joined.withColumn(&quot;avg_years_of_education_cgb&quot;, df_joined.sum_yoe_weighted / df_joined.sum_population) 
+ 
+df_final_cbg = df_avg_yoe_cbg.select(&quot;census_block_group&quot;, &quot;avg_years_of_education_cgb&quot;)
+ 
+from pyspark.sql.functions import substring, length, col, expr
+df_tract = df_final_cbg.withColumn(&quot;tract&quot;,expr(&quot;substring(census_block_group, 1, length(census_block_group)-1)&quot;))
+ 
+df_final_yoe = df_tract.groupBy(&quot;tract&quot;).mean(&quot;avg_years_of_education_cgb&quot;) \
+.withColumnRenamed(&quot;avg(avg_years_of_education_cgb)&quot;,&quot;Average_Years_of_Edcuation_by_tract&quot;)
+</code></pre><h5 class="mume-header" id="data-wrangling-1">Data Wrangling</h5>
+
+<pre data-role="codeBlock" data-info="{r, eval = FALSE}" class="language-"><code># Dataset for yeo_0
+df_education_yoe_0 = df_education_1.select(&quot;census_block_group&quot;, &quot;B15003e2&quot;) \
+.withColumn(&quot;yoe&quot;, lit(0)) \
+.withColumnRenamed(&apos;B15003e2&apos;, &apos;population&apos;) \
+#.show()
+ 
+#...
+ 
+df_weighted_education_yoe_0 = df_education_yoe_0.withColumn(&quot;yoe_weighted&quot;, df_education_yoe_0.population*df_education_yoe_0.yoe) 
+ 
+#...
+ 
+df_weighted_yoe = [df_weighted_education_yoe_0,
+                   df_weighted_education_yoe_1,
+                   
+#...
+ 
+total_population = df_merged_2.groupBy(&quot;census_block_group&quot;) \
+.sum(&quot;population&quot;) \
+.withColumnRenamed(&quot;sum(population)&quot;, &quot;sum_population&quot;)#.display(truncate=False)
+</code></pre><h5 class="mume-header" id="visualization-1">Visualization</h5>
+
+<p>Will Update when databricks is working</p>
+<h5 class="mume-header" id="table-1">Table</h5>
+
+<h2 class="mume-header" id="table-styling-in-markdown-1">Table Styling in Markdown</h2>
+
+<style>
+    .heatMap {
+        width: 70%;
+        text-align: center;
+    }
+    .heatMap th {
+        background: grey;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+</style>
+<div class="heatMap">
+<table>
+<thead>
+<tr>
+<th>tract</th>
+<th>Average_Years_of_Edcuation_by_tract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04019002506</td>
+<td>14.473276655508052</td>
+</tr>
+<tr>
+<td>06037701801</td>
+<td>15.57204377455066</td>
+</tr>
+<tr>
+<td>02020000400</td>
+<td>16.060375443937087</td>
+</tr>
+<tr>
+<td>17097863701</td>
+<td>17.340452865639847</td>
+</tr>
+<tr>
+<td>42011011101</td>
+<td>16.121747734765187</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
